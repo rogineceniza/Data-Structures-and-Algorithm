@@ -1,45 +1,16 @@
-﻿using System.Transactions;
+﻿using System.Globalization;
 
-public class Program
-{
+string tableNumber = "A100";
+int peopleCount = 4;
+DateTime reservationDateTime = new DateTime(
+2017, 10, 28, 11, 0, 0);
+CultureInfo cultureInfo = new CultureInfo("en-US");
+Console.WriteLine(
+"Table {0} has been booked for {1} people on {2} at {3}",
+tableNumber,
+peopleCount,
+reservationDateTime.ToString("M/d/yyyy", cultureInfo),
+reservationDateTime.ToString("HH:mm", cultureInfo));
 
-    class Info
-    {
-        private readonly int _id;
-        private readonly string _password;
-
-
-        public int Id { get; }
-        public string password { get; }
-        public string firstName { get; set; } = String.Empty;
-        public string lastName { get; set; } = String.Empty;
-
-        public Info(string password, int id)
-        {
-            _password = password;
-            _id = id;
-        }
-
-        public void getInfo()
-        {
-            Console.WriteLine("Enter First Name: ");
-            string fn = Console.ReadLine();
-            Console.Clear();
-
-            Console.WriteLine("Enter Last Name: ");
-            string ln = Console.ReadLine();
-            Console.Clear();
-
-            
-            Console.WriteLine($"Welcome {fn} {ln}! Hope you enjoy your stay.");
-        }
-
-
-
-        private static void Main(string[] args)
-        {
-            Info info = new("sdf", 123);
-            info.getInfo();
-        }
-    }
-}
+CultureInfo cInfo = new CultureInfo("en-PH");
+Console.WriteLine(cultureInfo.DisplayName);
