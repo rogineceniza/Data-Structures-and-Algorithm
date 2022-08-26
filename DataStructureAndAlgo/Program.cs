@@ -1,16 +1,20 @@
-﻿using System.Globalization;
+﻿//arrays
+int[] mads;
+mads = new int[2];
 
-string tableNumber = "A100";
-int peopleCount = 4;
-DateTime reservationDateTime = new DateTime(
-2017, 10, 28, 11, 0, 0);
-CultureInfo cultureInfo = new CultureInfo("en-US");
-Console.WriteLine(
-"Table {0} has been booked for {1} people on {2} at {3}",
-tableNumber,
-peopleCount,
-reservationDateTime.ToString("M/d/yyyy", cultureInfo),
-reservationDateTime.ToString("HH:mm", cultureInfo));
+int[] add = new int[2];
+add[0] = 234;
+add[1] = 6789;
 
-CultureInfo cInfo = new CultureInfo("en-PH");
-Console.WriteLine(cultureInfo.DisplayName);
+int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+Console.WriteLine(add[0]);
+
+int[] myArray = new int[] { 12, 34, 56, 78, 890, 45, 56 };
+
+foreach (int i in array) 
+{
+    Console.WriteLine(i);
+}
+
+    foreach (int j in myArray)
+    { Console.WriteLine(j); }
